@@ -2,7 +2,7 @@
 This is a simple Beamer presentation template designed for academic talks, thesis defenses, and seminars at **Waseda University**.
 
 ## Preview
-You can preview this theme template in `Example.pdf` 
+You can preview the template in `Example.pdf` 
 ![Title Slide Preview](Preview.png)
 
 ## Project Structure
