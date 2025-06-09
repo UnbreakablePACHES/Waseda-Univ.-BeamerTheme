@@ -5,6 +5,6 @@ This is a simple Beamer presentation template designed for academic talks, thesi
 Compile using `pdfLaTeX` (default on Overleaf).
 
 ## Preview
-You can preview this theme template in Example.pdf
-
-Feel free to customize and share it with others.
+You can preview this theme template in Example.pdf  
+![Title Slide Preview](Preview.png)  
+Feel free to customize and share it with others.  
