@@ -1,0 +1,102 @@
+\documentclass{beamer}
+
+% Palatino font (compatible with pdfLaTeX, with math support)
+\usepackage[sc]{mathpazo}          
+\renewcommand{\familydefault}{\rmdefault}  
+
+% Algorithm environment
+\usepackage{algorithm}
+\usepackage[noend]{algpseudocode}
+
+% Hyperlink settings
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    urlcolor=blue
+}
+
+% Use wsd.sty
+\usepackage{wsd}
+
+\author{Waseda Taro}
+\title{Waseda Univ. Beamer Theme}
+\subtitle{Subtitle}
+\institute{Waseda University}
+\date{\today}
+
+\begin{document}
+
+% Title Slide
+\begin{frame}
+    \vspace{-0.5cm} % Move logo upward slightly
+    \begin{figure}[htpb]
+        \flushright
+        \includegraphics[width=0.4\linewidth]{utils/waseda-university-logo.png} % Replace with your logo path
+    \end{figure}
+    \vspace{-0.5cm}
+    \titlepage
+\end{frame}
+
+% Example Slide
+\begin{frame}{Example Slide}
+    \begin{itemize}
+        \item This is how the itemized list appears
+        \item Fonts, colors, and layout follow Waseda style
+        \item Suitable for research presentations and thesis defense
+    \end{itemize}
+\end{frame}
+
+% Example Formula Slide
+\begin{frame}{Example Formula}
+    \begin{block}{SPO+ Loss}
+        \begin{equation*}
+            \mathcal{L}_{\text{SPO+}}(\hat{c}, c) = \max_{w \in \mathcal{S}} \left\{ (2\hat{c} - c)^T w \right\} - \hat{c}^T z^*(c)
+        \end{equation*}
+    \end{block}
+
+    \vspace{0.5em}
+
+    \begin{itemize}
+        \item $\hat{c}$: predicted cost vector
+        \item $c$: true cost vector
+        \item $z^*(c)$: optimal decision under true cost
+        \item $\mathcal{S}$: feasible set
+    \end{itemize}
+\end{frame}
+
+% Example Algorithm Slide
+\begin{frame}{Pseudocode Example}
+\begin{algorithm}[H]
+\caption{SPO+ Loss}
+\begin{algorithmic}[1]
+\Require Predicted cost vector $\hat{c}$, true cost vector $c$
+\State Solve $w^*(c) \gets \arg\max_{w \in \mathcal{S}} c^\top w$
+\State Solve $w^*(\hat{c}) \gets \arg\max_{w \in \mathcal{S}} (2c - \hat{c})^\top w$
+\State \Return $L(\hat{c}, c) = (2c - \hat{c})^\top w^*(\hat{c}) - c^\top w^*(c)$
+\end{algorithmic}
+\end{algorithm}
+\end{frame}
+
+% Example Reference Slide
+\begin{frame}{References}
+    \footnotesize
+    \begin{thebibliography}{9}
+        \bibitem{elmachtoub2022}
+        Elmachtoub, A. N. and Grigas, P.\\
+        \textit{Smart “Predict, then Optimize”}.
+        Management Science, 2022.
+    \end{thebibliography}
+\end{frame}
+
+% Example Acknowledgement Slide
+\begin{frame}{Acknowledgements}
+    \begin{itemize}
+        \item This work was supported by Waseda University.
+    \end{itemize}
+    \vspace{1.0cm}
+    \centering
+    {\Large Thank you for your attention!}
+\end{frame}
+
+\end{document}

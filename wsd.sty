@@ -1,0 +1,72 @@
+\mode<presentation>
+\newif\ifbeamer@secheader
+\beamer@secheaderfalse
+
+%\DeclareOptionBeamer{secheader}{\beamer@secheadertrue}
+\ProcessOptionsBeamer
+
+\useoutertheme[footline=authorinstitutetitle,subsection=false]{smoothbars}
+\makeatletter % [add curpage/total page at the bottom](http://tex.stackexchange.com/questions/100838/beamer-dresden-theme-miniframes-appeareance-and-frame-number-insertion)
+\newcommand{\frameofframes}{/}
+\newcommand{\setframeofframes}[1]{\renewcommand{\frameofframes}{#1}}
+\setbeamertemplate{footline} 
+  {%
+    \begin{beamercolorbox}[colsep=1.5pt]{upper separation line foot}
+    \end{beamercolorbox}
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{author in head/foot}%
+      \leavevmode{\usebeamerfont{author in head/foot}\insertshortauthor}%
+      \hfill%
+      {\usebeamerfont{institute in head/foot}\usebeamercolor[fg]{institute in head/foot}\insertshortinstitute}%
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[ht=2.5ex,dp=1.125ex,%
+      leftskip=.3cm,rightskip=.3cm plus1fil]{title in head/foot}%
+      {\usebeamerfont{title in head/foot}\insertshorttitle}%
+      \hfill%
+      {\usebeamerfont{frame number}\usebeamercolor[fg]{frame number}\insertframenumber~\frameofframes~\inserttotalframenumber}
+    \end{beamercolorbox}%
+    \begin{beamercolorbox}[colsep=1.5pt]{lower separation line foot}
+    \end{beamercolorbox}
+  }
+\makeatother
+
+\useinnertheme{circles}
+
+%\useoutertheme{default}
+%\useinnertheme[shadow=true]{rounded}
+
+% 定义颜色
+\xdefinecolor{wasedared}{RGB}{133,36,51}
+
+% 设置结构色（全局使用）
+\setbeamercolor{structure}{fg=wasedared}
+
+% 设置标题栏
+\setbeamercolor{frametitle}{bg=wasedared, fg=white}
+\setbeamerfont{frametitle}{size=\large}
+
+% 设置总标题栏
+\setbeamercolor{title}{bg=wasedared, fg=white}
+
+% 设置页脚
+\setbeamercolor{footline}{bg=wasedared, fg=white}
+
+% 设置block（框）标题
+\setbeamercolor{block title}{bg=wasedared, fg=white}
+\setbeamercolor{block title example}{bg=white, fg=wasedared}
+
+% 设置 sidebar （可选）
+\setbeamercolor{sidebar}{bg=wasedared}
+\AtBeginSection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+\AtBeginSubsection[]{
+	\begin{frame}
+		\tableofcontents[sectionstyle=show/shaded,subsectionstyle=show/shaded/hide,subsubsectionstyle=show/shaded/hide]
+	\end{frame}
+}
+
+\mode
+<all>
