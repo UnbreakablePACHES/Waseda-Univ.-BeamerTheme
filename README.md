@@ -1,5 +1,5 @@
 # Waseda University Beamer Theme
-This is a simple Beamer presentation template designed for academic talks, thesis defenses, and seminars at **Waseda University**.
+This is a unofficial Beamer presentation template designed for academic talks, thesis defenses, and seminars at **Waseda University**.
 
 ## Preview
 You can preview the template in `Example.pdf` 
